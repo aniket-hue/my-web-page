@@ -1,11 +1,8 @@
-$sizes: ("h1": 2em,
-    "h2":1.5em,
-    "h3":1.7em,
-    "h4":1em,
-    "h5":.83em,
-    "h6":.67em);
+@use "sass:map";
 
 $colors: ("black": #333333,
+    "salmon":#fa8072,
+    "veryLightBlue": #add8e6,
     "lightBlue": #4D96FF,
     "darkBlue": #446df6,
     "lightGreen": #aceca1,
@@ -16,3 +13,19 @@ $colors: ("black": #333333,
     "lightYellow": #fbf34c,
     "darkYellow": #FFD93D,
     "lightRed": #FF6B6B);
+
+@function getColor($color) {
+    @return map.get($colors, $color)
+}
+
+.d-flex {
+    display: flex;
+}
+
+.align-center {
+    align-items: center;
+}
+
+.justify-center {
+    justify-content: center;
+}

@@ -1,0 +1,35 @@
+@use '../../styles/common'as v;
+
+.button {
+    width: 7.5rem;
+    height: 2.5rem;
+
+    color: #fff;
+    font-size: 15px;
+    font-weight: 600;
+    font-size: 22px;
+
+    border: none;
+    border-radius: 4px;
+
+    cursor: pointer;
+
+    background: linear-gradient(to left, v.getColor("salmon") 50%, v.getColor("veryLightBlue") 50%) right;
+    background-size: 200%;
+    transition: .5s ease-out;
+
+    &:active {
+        animation: forwards shake;
+        background-position: left;
+    }
+
+    @keyframes shake {
+        from {
+            transform: rotateZ(-5deg);
+        }
+
+        to {
+            transform: rotateZ(5deg);
+        }
+    }
+}

@@ -1,16 +1,15 @@
-import { Text } from './components/text'
+import { Button } from "./components/button";
+import { Header } from "./components/header";
+import { Text } from "./components/text";
 
-function App() {
+export const App = () => {
   return (
     <>
-      <Text type="h1" color="lightBlue">h1</Text>
-      <Text type="h2" color="lightBlue">h1</Text>
-      <Text type="h3" color="lightBlue">h1</Text>
-      <Text type="h4" color="lightBlue">h1</Text>
-      <Text type="h5" color="lightBlue">h1</Text>
-      <Text type="h6" color="lightBlue">h1</Text>
+      <div>
+        <Header />
+      </div>
     </>
   );
-}
+};
 
 export default App;

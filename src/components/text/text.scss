@@ -1,11 +1,23 @@
 @use '../../styles/common'as v;
 
+$sizes: ("h1": 2rem,
+  "h2":1.5rem,
+  "h3":1.7rem,
+  "h4":1rem,
+  "h5":.83rem,
+  "h6":.67rem);
+
 
 @each $item,
-$size in v.$sizes {
+$size in $sizes {
   .text--#{$item} {
     font-size: $size;
-    font-weight: bolder;
+  }
+}
+
+@for $i from 1 through 7 {
+  .weight--#{$i * 100} {
+    font-weight: #{$i * 100};
   }
 }
 
