@@ -1,0 +1,17 @@
+@use '../../styles/common'as v;
+
+
+@each $item,
+$size in v.$sizes {
+  .text--#{$item} {
+    font-size: $size;
+    font-weight: bolder;
+  }
+}
+
+@each $item,
+$color in v.$colors {
+  .text--#{$item} {
+    color: $color;
+  }
+}
