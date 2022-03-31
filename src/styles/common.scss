@@ -1,6 +1,8 @@
 @use "sass:map";
 
 $colors: ("black": #333333,
+    "white":#ffffff,
+    "white2":#e2e8f0,
     "salmon":#fa8072,
     "veryLightBlue": #add8e6,
     "lightBlue": #4D96FF,
@@ -9,17 +11,31 @@ $colors: ("black": #333333,
     "darkGreen": #6BCB77,
     "lightGray": #efefef,
     "darkGray": #c2c2c2,
+    "veryDarkGray":#999999,
     "lightViolet": #ac87fe,
-    "lightYellow": #fbf34c,
     "darkYellow": #FFD93D,
+    "lightYellow": #fbf34c,
     "lightRed": #FF6B6B);
 
 @function getColor($color) {
-    @return map.get($colors, $color)
+    @return map.get($colors, $color);
+}
+
+.mh-auto {
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .d-flex {
     display: flex;
+}
+
+.d-in-flex {
+    display: inline-flex;
+}
+
+.column {
+    flex-direction: column;
 }
 
 .align-center {
@@ -28,4 +44,75 @@ $colors: ("black": #333333,
 
 .justify-center {
     justify-content: center;
+}
+
+.justify-between {
+    justify-content: space-between;
+}
+
+.h-100vh {
+    height: 100vh;
+}
+
+.w-pct-80 {
+    width: 80%;
+}
+
+.p-absolute {
+    position: absolute;
+}
+
+.p-relative {
+    position: relative;
+}
+
+.flex-wrap {
+    flex-wrap: wrap;
+}
+
+
+@for $i from 1 through 1000 {
+    .gap-#{$i} {
+        gap: #{$i / 16}rem;
+    }
+
+    .mb-#{$i} {
+        margin-bottom: #{$i/16}rem;
+    }
+
+    .mt-#{$i} {
+        margin-top: #{$i/16}rem;
+    }
+
+    .w-#{$i}px {
+        width: #{$i}px;
+    }
+
+    .h-#{$i}px {
+        height: #{$i/16}rem;
+    }
+
+    .w-#{$i}pct {
+        width: #{$i + 0%};
+    }
+
+    .h-#{$i}pct {
+        height: #{$i + 0%};
+    }
+
+    .t-#{$i} {
+        top: #{$i / 16}rem;
+    }
+
+    .l-#{$i} {
+        left: #{$i / 16}rem;
+    }
+
+    .r-#{$i} {
+        right: #{$i / 16}rem;
+    }
+
+    .b-#{$i} {
+        bottom: #{$i / 16}rem;
+    }
 }

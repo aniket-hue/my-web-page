@@ -1,5 +1,9 @@
 @use '../../styles/common'as v;
 
+.text {
+  display: inline-block;
+}
+
 $sizes: ("h1": 2rem,
   "h2":1.5rem,
   "h3":1.7rem,
@@ -25,5 +29,11 @@ $size in $sizes {
 $color in v.$colors {
   .text--#{$item} {
     color: $color;
+  }
+}
+
+@for $i from 1 through 200 {
+  .text--#{$i} {
+    font-size: #{$i / 16}rem;
   }
 }
