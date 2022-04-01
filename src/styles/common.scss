@@ -15,7 +15,8 @@ $colors: ("black": #333333,
     "lightViolet": #ac87fe,
     "darkYellow": #FFD93D,
     "lightYellow": #fbf34c,
-    "lightRed": #FF6B6B);
+    "lightRed": #FF6B6B,
+    "razorBlue":#4a5568);
 
 @function getColor($color) {
     @return map.get($colors, $color);
@@ -68,6 +69,20 @@ $colors: ("black": #333333,
 
 .flex-wrap {
     flex-wrap: wrap;
+}
+
+.pos-center {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+@each $item,
+$color in $colors {
+    .svg-color-#{$item} {
+        fill: $color;
+        stroke: $color;
+    }
 }
 
 

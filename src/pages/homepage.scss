@@ -1,4 +1,6 @@
-.content-wrapper {
+.first-wrapper {
+    height: 100vh;
+
     .waving-hand {
         cursor: pointer;
 
@@ -29,6 +31,7 @@
 
         }
     }
+
 }
 
 .moveUpDown {
@@ -36,7 +39,7 @@
 
     @keyframes moveUpDown {
         0% {
-            transform: translateY(0);
+            transform: translateY(0px);
         }
 
         100% {

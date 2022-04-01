@@ -1,10 +1,12 @@
+import { forwardRef } from "react";
+
 import "./header.scss";
 import { ReactComponent as Logo } from "../../assets/logo.svg";
 import { Button } from "../button";
 
-export const Header = (props) => {
+export const Header = forwardRef((props, ref) => {
   return (
-    <div className='header-wrapper d-flex align-center justify-between w-50pct mh-auto'>
+    <div ref={ref} className='header-wrapper d-flex align-center justify-between w-50pct mh-auto'>
       <div>
         <Logo height={100} width={100} />
       </div>
@@ -15,4 +17,4 @@ export const Header = (props) => {
       </div>
     </div>
   );
-};
+});
