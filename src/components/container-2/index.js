@@ -1,8 +1,6 @@
-import { useEffect } from "react";
-
-export const Container2 = (props) => {
+export const Container2 = ({ className, ...props }) => {
   return (
-    <div style={{ zIndex: -1 }} className='p-relative w-100pct moveUpDown'>
+    <div style={{ zIndex: -1 }} className={`p-absolute w-100pct moveUpDown h-100vh ${className}`}>
       <div>{props.children}</div>
     </div>
   );

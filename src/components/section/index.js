@@ -1,7 +1,3 @@
-export const Section = (props) => {
-  return (
-    <div data-scroll-section className='d-flex first-wrapper justify-center'>
-      {props.children}
-    </div>
-  );
+export const Section = ({ className, ...props }) => {
+  return <div className={`d-flex first-wrapper justify-center h-100vh ${className || ""}`}>{props.children}</div>;
 };
