@@ -19,26 +19,26 @@ export const Shapes = (props) => {
   const type = props.type || "Circle";
   const width = props.width;
   const color = props.color;
-  const top = props?.top;
-  const bottom = props?.bottom;
-  const left = props?.left;
+  const top = props.top;
+  const bottom = props.bottom;
+  const left = props.left;
   const right = props.right;
   const rotate = props.rotate;
 
   const Shape = objType[type];
 
   const po = { top, bottom, right, left };
-  const st = Object.keys(po).filter((e) => po[e]);
+  const st = Object.keys(po).filter((e) => !isNaN(po[e]));
   let finalPo = {};
 
   st.forEach((f) => {
-    finalPo = { ...finalPo, [f]: po[f] };
+    finalPo = { ...finalPo, [f]: `${po[f]}%` };
   });
 
   return (
     <>
       <div className={`p-absolute svg-color-${color}`} style={{ ...finalPo, transform: `rotate(${rotate}deg)` }}>
-        <Shape width={width} height={width} fill={color} stroke={color} />
+        <Shape className={`w-${width}px`} fill={color} stroke={color} />
       </div>
     </>
   );
