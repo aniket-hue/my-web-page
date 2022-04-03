@@ -17,6 +17,9 @@ import { ReactComponent as ReduxIcon } from "../assets/redux.svg";
 import { ReactComponent as OpenlayersIcon } from "../assets/openlayers.svg";
 import { ReactComponent as GitIcon } from "../assets/git.svg";
 import { ReactComponent as LinuxIcon } from "../assets/linux.svg";
+import { ReactComponent as GithubIcon } from "../assets/github.svg";
+import { ReactComponent as InstagramIcon } from "../assets/instagram.svg";
+import { ReactComponent as LinkedinIcon } from "../assets/linkedin.svg";
 
 import "./homepage.scss";
 import { SQUARE, RING, TRIANGLE, CUBE, HEXAGON, UPTRIANGLE } from "../constants";
@@ -41,16 +44,35 @@ export const Homepage = (props) => {
 
           <Container className='about-wrapper mt-30'>
             <Text type='30' fontWeight={500} lineHeight={1.5} color='darkGray'>
-              My name is Aniket. I am a frontend engineer focused on (currently @
+              My name is Aniket. I am a frontend engineer (
               <a className='href-link' href='https://www.primathon.in' target='_blank'>
-                Primathon
+                @Primathon
               </a>
-              ) improving myself. Always looking to learn new skills and improve on existing knowledge, hoping to
-              contribute to making the world a better place.
+              ) focused on improving myself. Always looking to learn new skills and improve on existing knowledge,
+              hoping to contribute to making the world a better place.
             </Text>
           </Container>
 
-          <Button className='more-button mt-50'>more about me</Button>
+          <Container className='social-links d-flex align-center gap-60 mt-50'>
+            <a href='https://www.github.com/aniket-hue' target='_blank'>
+              <GithubIcon />
+            </a>
+            <a href='https://www.linkedin.com/in/aniket-saxena1998/' target='_blank'>
+              <LinkedinIcon />
+            </a>
+            <a href='https://www.instagram.com/baskaraniket_' target='_blank'>
+              <InstagramIcon />
+            </a>
+            <Text type='30' fontWeight={600} color='darkGray'>
+              <a
+                href='https://drive.google.com/u/0/uc?id=1IrgIlXzr7C0WIo35kP4NFsEDbMFFtWZY&export=download'
+                download
+                target='_blank'
+              >
+                Résumé
+              </a>
+            </Text>
+          </Container>
         </Container>
 
         <Container style={{ top: 0, zIndex: -1 }} className='p-absolute moveUpDown h-100vh w-100pct t-0'>
@@ -62,7 +84,7 @@ export const Homepage = (props) => {
         </Container>
       </Container>
 
-      <Container withScroll={true} className='top-container h-100vh'>
+      <Container withScroll={true} className='top-container'>
         <Container className='d-flex column container-lg mh-auto'>
           <Text type='130' fontWeight={400} color='veryLightBlue' className='mb-80'>
             my skills
@@ -81,7 +103,7 @@ export const Homepage = (props) => {
           </div>
         </Container>
 
-        <Container style={{ top: 0, zIndex: -1 }} className='p-absolute moveUpDown w-100pct t-0'>
+        <Container style={{ top: 0, zIndex: -1 }} className='p-absolute moveUpDown h-100vh w-100pct t-0'>
           <Shapes type={SQUARE} width={200} color='lightViolet' top={500} right={300} rotate={-25} />
           <Shapes type={HEXAGON} width={50} color='razorBlue' top={170} left={70} rotate={-25} />
           <Shapes type={UPTRIANGLE} width={120} color='razorBlue' top={700} left={700} rotate={-25} />
@@ -90,7 +112,7 @@ export const Homepage = (props) => {
         </Container>
       </Container>
 
-      <Container withScroll={true} className='top-container h-100vh'>
+      <Container withScroll={true} className='top-container'>
         <Container className='d-flex column container-lg mh-auto'>
           <Text type='130' fontWeight={400} color='veryLightBlue' className='mb-80'>
             timeline
@@ -113,7 +135,7 @@ export const Homepage = (props) => {
           </div>
         </Container>
 
-        <Container style={{ top: 0, zIndex: -1 }} className='p-absolute moveUpDown w-100pct t-0'>
+        <Container style={{ top: 0, zIndex: -1 }} className='p-absolute moveUpDown h-100vh w-100pct t-0'>
           <Shapes type={SQUARE} width={200} color='lightViolet' top={500} right={300} rotate={-25} />
           <Shapes type={HEXAGON} width={50} color='razorBlue' top={170} left={70} rotate={-25} />
           <Shapes type={UPTRIANGLE} width={120} color='razorBlue' top={700} left={700} rotate={-25} />
@@ -121,13 +143,6 @@ export const Homepage = (props) => {
           <Shapes type={TRIANGLE} width={60} color='red' top={40} right={400} rotate={-25} />
         </Container>
       </Container>
-
-      {/* <div>
-        <Text type='130' fontWeight={400} color='black' className='mb-100'>
-          contact me
-        </Text>
-        <ContactForm />
-      </div> */}
     </PageWrapper>
   );
 };

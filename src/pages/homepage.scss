@@ -1,3 +1,5 @@
+@use "../styles/common"as v;
+
 .top-container {
     position: relative;
 
@@ -29,6 +31,44 @@
                 transform: scale(1) rotateZ(0deg);
             }
 
+        }
+    }
+
+    .href-link {
+        &:active {
+            color: v.getColor("lightRed")
+        }
+
+        &:visited {
+            color: v.getColor("lightRed")
+        }
+    }
+
+    .social-links {
+        p {
+            display: inline-block;
+            text-decoration: underline;
+            text-underline-offset: 5px;
+            text-transform: capitalize;
+            margin: auto 0;
+            cursor: pointer;
+
+            a {
+                color: v.getColor("darkGray");
+            }
+        }
+
+        svg {
+            user-select: none;
+            fill: v.getColor("darkGray");
+            width: 50px;
+            height: 50px;
+            transition: .2s;
+        }
+
+        svg:hover {
+            transform: scale(1.1);
+            fill: v.getColor("white2");
         }
     }
 }
