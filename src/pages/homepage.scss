@@ -3,6 +3,12 @@
 .top-container {
     position: relative;
 
+    .about-wrapper {
+        p {
+            text-align: justify;
+        }
+    }
+
     .waving-hand {
         cursor: pointer;
 
@@ -51,10 +57,16 @@
             text-underline-offset: 5px;
             text-transform: capitalize;
             margin: auto 0;
+            transition: .2s;
             cursor: pointer;
 
             a {
                 color: v.getColor("darkGray");
+            }
+
+            &:hover {
+                transform: scale(1.1);
+                color: v.getColor("white2");
             }
         }
 

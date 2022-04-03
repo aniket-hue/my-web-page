@@ -31,13 +31,13 @@ const skillIconHeight = 80;
 export const Homepage = (props) => {
   return (
     <PageWrapper>
-      <Container withScroll={true} className='top-container h-100vh pt-150'>
-        <Container className='d-flex column container-lg mh-auto'>
+      <Container withScroll={true} className='top-container d-flex h-100vh'>
+        <Container className='d-flex column container-lg m-auto'>
           <Container className='head-wrapper'>
             <Text type='130' fontWeight={500} color='veryLightBlue'>
               Heyo!
             </Text>
-            <Text type='130' className='waving-hand'>
+            <Text type='80' className='waving-hand'>
               👋🏻
             </Text>
           </Container>
@@ -53,7 +53,7 @@ export const Homepage = (props) => {
             </Text>
           </Container>
 
-          <Container className='social-links d-flex align-center gap-60 mt-50'>
+          <Container className='social-links d-flex text-wrap align-center gap-60 mt-90'>
             <a href='https://www.github.com/aniket-hue' target='_blank'>
               <GithubIcon />
             </a>
@@ -111,18 +111,11 @@ export const Homepage = (props) => {
         </Container>
 
         <Container style={{ top: 0, zIndex: -1 }} className='p-absolute moveUpDown h-100vh w-100pct t-0'>
-          <Shapes type={RING} width={200} color='razorBlue' top={30} left={10} />
-          <Shapes type={RING} width={60} color='yellow' bottom={40} right={5} />
+          <Shapes type={RING} width={150} color='lightGreen' top={30} left={10} />
           <Shapes type={RING} width={40} color='razorBlue' top={9} left={0} />
           <Shapes type={SQUARE} width={200} color='darkRazorBlue' top={0} right={7} />
           <Shapes type={SQUARE} width={40} color='violet' top={10} right={40} />
-          <Shapes type={SQUARE} width={30} color='green' bottom={10} left={30} />
-          <Shapes type={HEXAGON} width={60} color='razorBlue' bottom={10} right={40} />
-          <Shapes type={HEXAGON} width={50} color='darkRazorBlue' top={2} left={39} />
-          <Shapes type={TRIANGLE} width={100} color='darkRazorBlue' bottom={0} left={0} />
-          <Shapes type={TRIANGLE} width={100} color='darkRazorBlue' bottom={20} right={30} />
-          <Shapes type={TRIANGLE} width={40} color='darkRazorBlue' top={30} right={30} />
-          <Shapes type={UPTRIANGLE} width={40} color='lightGreen' top={2} left={10} />
+          <Shapes type={HEXAGON} width={50} color='darkRazorBlue' bottom={50} left={39} />
         </Container>
       </Container>
 
@@ -132,14 +125,14 @@ export const Homepage = (props) => {
             timeline
           </Text>
           <div className='d-flex column w-100pct gap-25'>
-            {Object.entries(data.timeline).map(([k, v]) => {
+            {Object.entries(data.timeline).map(([k, v], i) => {
               return (
-                <div className='d-flex column gap-8'>
+                <div key={i} className='d-flex column gap-8'>
                   <Text type='30' fontWeight={600} color='darkYellow' className='mb-9'>
                     {k}
                   </Text>
-                  {v.map((e) => (
-                    <Text type='25' color='lightGray'>
+                  {v.map((e, i) => (
+                    <Text key={i} type='25' color='lightGray'>
                       {e}
                     </Text>
                   ))}
@@ -150,12 +143,6 @@ export const Homepage = (props) => {
         </Container>
 
         <Container style={{ top: 0, zIndex: -1 }} className='p-absolute moveUpDown h-100vh w-100pct t-0'>
-          <Shapes type={RING} width={200} color='razorBlue' top={30} left={10} />
-          <Shapes type={RING} width={60} color='yellow' bottom={40} right={5} />
-          <Shapes type={RING} width={40} color='razorBlue' top={9} left={0} />
-          <Shapes type={SQUARE} width={200} color='darkRazorBlue' top={0} right={7} />
-          <Shapes type={SQUARE} width={40} color='violet' top={10} right={40} />
-          <Shapes type={SQUARE} width={30} color='green' bottom={10} left={30} />
           <Shapes type={HEXAGON} width={60} color='razorBlue' bottom={10} right={40} />
           <Shapes type={HEXAGON} width={50} color='darkRazorBlue' top={2} left={39} />
           <Shapes type={TRIANGLE} width={100} color='darkRazorBlue' bottom={0} left={0} />

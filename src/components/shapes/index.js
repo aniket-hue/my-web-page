@@ -29,13 +29,12 @@ export const Shapes = (props) => {
 
   const po = { top, bottom, right, left };
   const st = Object.keys(po).filter((e) => !isNaN(po[e]));
-  console.log(st);
   let finalPo = {};
 
   st.forEach((f) => {
     finalPo = { ...finalPo, [f]: `${po[f]}%` };
   });
-  console.log(st);
+
   return (
     <>
       <div className={`p-absolute svg-color-${color}`} style={{ ...finalPo, transform: `rotate(${rotate}deg)` }}>
