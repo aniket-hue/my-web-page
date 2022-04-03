@@ -1,0 +1,22 @@
+.w-md-63 {
+    width: 63%;
+}
+
+.w-xl-50 {
+    width: 50%;
+}
+
+
+
+@media (max-width:768px) {
+    .w-md-63 {
+        width: 100%;
+    }
+}
+
+
+@media (max-width:1200px) {
+    .w-xl-50 {
+        width: 100%;
+    }
+}

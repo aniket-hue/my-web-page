@@ -1,5 +1,6 @@
 import LocomotiveScroll from "locomotive-scroll";
 import { useEffect, useRef } from "react";
+import "./page-wrapper.scss";
 
 export const PageWrapper = ({ className, ...props }) => {
   const containerRef = useRef();
@@ -12,7 +13,7 @@ export const PageWrapper = ({ className, ...props }) => {
   }, []);
 
   return (
-    <div ref={containerRef} className={`page-wrapper`} data-scroll-container>
+    <div className='page-wrapper' ref={containerRef} data-scroll-container {...props}>
       {props.children}
     </div>
   );

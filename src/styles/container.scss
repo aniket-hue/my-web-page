@@ -1,0 +1,23 @@
+$medium:576px;
+$large:768px;
+
+.container-md {
+    width: 540px;
+}
+
+.container-lg {
+    width: 720px;
+}
+
+
+@media (max-width:$large) {
+    .container-lg {
+        max-width: 100%;
+    }
+}
+
+@media (max-width:$medium) {
+    .container-md {
+        max-width: 100%;
+    }
+}

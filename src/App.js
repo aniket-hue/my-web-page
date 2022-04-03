@@ -7,12 +7,12 @@ import { Homepage } from "./pages/homepage";
 
 export const App = () => {
   return (
-    <div>
+    <>
       {/* <Header ref={header} /> */}
       <Routes>
         <Route path='/' element={<Homepage />} />
       </Routes>
-    </div>
+    </>
   );
 };
 

@@ -1,4 +1,6 @@
 @use "sass:map";
+@use "./container";
+@use "./sizes";
 
 $colors: ("black": #333333,
     "white":#ffffff,
@@ -85,6 +87,12 @@ $color in $colors {
     }
 }
 
+@for $i from -3 through 3 {
+    .z-#{$i} {
+        z-index: #{$i};
+    }
+}
+
 
 @for $i from 1 through 1000 {
     .gap-#{$i} {
@@ -127,7 +135,23 @@ $color in $colors {
         right: #{$i / 16}rem;
     }
 
-    .b-#{$i} {
-        bottom: #{$i / 16}rem;
+    .pl-#{$i} {
+        padding-left: #{$i / 16}rem;
+    }
+
+    .pr-#{$i} {
+        padding-right: #{$i / 16}rem;
+    }
+
+    .pb-#{$i} {
+        padding-bottom: #{$i / 16}rem;
+    }
+
+    .pt-#{$i} {
+        padding-top: #{$i / 16}rem;
+    }
+
+    .p-#{$i} {
+        padding: #{$i / 16}rem;
     }
 }
