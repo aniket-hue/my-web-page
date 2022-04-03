@@ -18,7 +18,9 @@ $colors: ("black": #333333,
     "darkYellow": #FFD93D,
     "lightYellow": #fbf34c,
     "lightRed": #FF6B6B,
-    "razorBlue":#4a5568);
+    "razorBlue":#4a5568,
+    "darkRazorBlue":#2d3748,
+);
 
 @function getColor($color) {
     @return map.get($colors, $color);
@@ -108,7 +110,7 @@ $color in $colors {
     }
 
     .w-#{$i}px {
-        width: #{$i}px;
+        width: #{$i/16}rem;
     }
 
     .h-#{$i}px {

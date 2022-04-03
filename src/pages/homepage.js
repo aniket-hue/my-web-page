@@ -76,20 +76,27 @@ export const Homepage = (props) => {
         </Container>
 
         <Container style={{ top: 0, zIndex: -1 }} className='p-absolute moveUpDown h-100vh w-100pct t-0'>
-          <Shapes type={SQUARE} width={200} color='lightViolet' top={500} right={300} rotate={-25} />
-          <Shapes type={HEXAGON} width={50} color='razorBlue' top={170} left={70} rotate={-25} />
-          <Shapes type={UPTRIANGLE} width={120} color='razorBlue' top={700} left={700} rotate={-25} />
-          <Shapes type={RING} width={100} color='razorBlue' top={70} left={500} rotate={-25} />
-          <Shapes type={TRIANGLE} width={60} color='red' top={40} right={400} rotate={-25} />
+          <Shapes type={RING} width={200} color='razorBlue' top={30} left={10} />
+          <Shapes type={RING} width={60} color='yellow' bottom={40} right={5} />
+          <Shapes type={RING} width={40} color='razorBlue' top={9} left={0} />
+          <Shapes type={SQUARE} width={200} color='darkRazorBlue' top={0} right={7} />
+          <Shapes type={SQUARE} width={40} color='violet' top={10} right={40} />
+          <Shapes type={SQUARE} width={30} color='green' bottom={10} left={30} />
+          <Shapes type={HEXAGON} width={60} color='razorBlue' bottom={10} right={40} />
+          <Shapes type={HEXAGON} width={50} color='darkRazorBlue' top={2} left={39} />
+          <Shapes type={TRIANGLE} width={100} color='darkRazorBlue' bottom={0} left={0} />
+          <Shapes type={TRIANGLE} width={100} color='darkRazorBlue' bottom={20} right={30} />
+          <Shapes type={TRIANGLE} width={40} color='darkRazorBlue' top={30} right={30} />
+          <Shapes type={UPTRIANGLE} width={40} color='lightGreen' top={2} left={10} />
         </Container>
       </Container>
 
-      <Container withScroll={true} className='top-container'>
+      <Container withScroll={true} className='top-container mb-90'>
         <Container className='d-flex column container-lg mh-auto'>
           <Text type='130' fontWeight={400} color='veryLightBlue' className='mb-80'>
             my skills
           </Text>
-          <div className='d-flex flex-wrap gap-50'>
+          <div className='d-flex flex-wrap gap-10'>
             <JavaIcon className='mb-10' width={skillIconWidth} height={skillIconHeight} />
             <JsIcon className='mb-10' width={skillIconWidth} height={skillIconHeight} />
             <TsIcon className='mb-10' width={skillIconWidth} height={skillIconHeight} />
@@ -104,11 +111,18 @@ export const Homepage = (props) => {
         </Container>
 
         <Container style={{ top: 0, zIndex: -1 }} className='p-absolute moveUpDown h-100vh w-100pct t-0'>
-          <Shapes type={SQUARE} width={200} color='lightViolet' top={500} right={300} rotate={-25} />
-          <Shapes type={HEXAGON} width={50} color='razorBlue' top={170} left={70} rotate={-25} />
-          <Shapes type={UPTRIANGLE} width={120} color='razorBlue' top={700} left={700} rotate={-25} />
-          <Shapes type={RING} width={100} color='razorBlue' top={70} left={500} rotate={-25} />
-          <Shapes type={TRIANGLE} width={60} color='red' top={40} right={400} rotate={-25} />
+          <Shapes type={RING} width={200} color='razorBlue' top={30} left={10} />
+          <Shapes type={RING} width={60} color='yellow' bottom={40} right={5} />
+          <Shapes type={RING} width={40} color='razorBlue' top={9} left={0} />
+          <Shapes type={SQUARE} width={200} color='darkRazorBlue' top={0} right={7} />
+          <Shapes type={SQUARE} width={40} color='violet' top={10} right={40} />
+          <Shapes type={SQUARE} width={30} color='green' bottom={10} left={30} />
+          <Shapes type={HEXAGON} width={60} color='razorBlue' bottom={10} right={40} />
+          <Shapes type={HEXAGON} width={50} color='darkRazorBlue' top={2} left={39} />
+          <Shapes type={TRIANGLE} width={100} color='darkRazorBlue' bottom={0} left={0} />
+          <Shapes type={TRIANGLE} width={100} color='darkRazorBlue' bottom={20} right={30} />
+          <Shapes type={TRIANGLE} width={40} color='darkRazorBlue' top={30} right={30} />
+          <Shapes type={UPTRIANGLE} width={40} color='lightGreen' top={2} left={10} />
         </Container>
       </Container>
 
@@ -136,11 +150,18 @@ export const Homepage = (props) => {
         </Container>
 
         <Container style={{ top: 0, zIndex: -1 }} className='p-absolute moveUpDown h-100vh w-100pct t-0'>
-          <Shapes type={SQUARE} width={200} color='lightViolet' top={500} right={300} rotate={-25} />
-          <Shapes type={HEXAGON} width={50} color='razorBlue' top={170} left={70} rotate={-25} />
-          <Shapes type={UPTRIANGLE} width={120} color='razorBlue' top={700} left={700} rotate={-25} />
-          <Shapes type={RING} width={100} color='razorBlue' top={70} left={500} rotate={-25} />
-          <Shapes type={TRIANGLE} width={60} color='red' top={40} right={400} rotate={-25} />
+          <Shapes type={RING} width={200} color='razorBlue' top={30} left={10} />
+          <Shapes type={RING} width={60} color='yellow' bottom={40} right={5} />
+          <Shapes type={RING} width={40} color='razorBlue' top={9} left={0} />
+          <Shapes type={SQUARE} width={200} color='darkRazorBlue' top={0} right={7} />
+          <Shapes type={SQUARE} width={40} color='violet' top={10} right={40} />
+          <Shapes type={SQUARE} width={30} color='green' bottom={10} left={30} />
+          <Shapes type={HEXAGON} width={60} color='razorBlue' bottom={10} right={40} />
+          <Shapes type={HEXAGON} width={50} color='darkRazorBlue' top={2} left={39} />
+          <Shapes type={TRIANGLE} width={100} color='darkRazorBlue' bottom={0} left={0} />
+          <Shapes type={TRIANGLE} width={100} color='darkRazorBlue' bottom={20} right={30} />
+          <Shapes type={TRIANGLE} width={40} color='darkRazorBlue' top={30} right={30} />
+          <Shapes type={UPTRIANGLE} width={40} color='lightGreen' top={2} left={10} />
         </Container>
       </Container>
     </PageWrapper>
