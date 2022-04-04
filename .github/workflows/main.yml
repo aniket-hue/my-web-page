@@ -3,8 +3,9 @@ name: Production workflow
 
 # When workflow is triggered
 on:
-  branches:
-    - main
+  push:
+    branches:
+      - main
 
 # Jobs to carry out
 jobs:
