@@ -2,7 +2,8 @@
 
 .button {
     height: 2.5rem;
-    // width: fit-content;
+    width: fit-content;
+    user-select: none;
     padding: 0 10px;
 
     color: #fff;

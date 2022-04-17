@@ -2,7 +2,7 @@ export const Container = ({ className, withScroll = false, ...props }) => {
   return (
     <>
       {withScroll ? (
-        <div data-scroll data-scroll-speed='3' className={className || ""} {...props}>
+        <div data-scroll data-scroll-speed='5' className={className || ""} {...props}>
           {props.children}
         </div>
       ) : (

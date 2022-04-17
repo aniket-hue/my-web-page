@@ -16,13 +16,13 @@ export const ContactForm = () => {
   };
 
   return (
-    <div className='w-450px'>
-      <form onSubmit={submitHandler} className='d-flex column gap-12'>
-        <Input name='name' type='text' placeholder='Enter name' onChange={inputHandler} />
-        <Input name='email' type='text' placeholder='Enter e-mail' onChange={inputHandler} />
-        <Input name='mess' type='textarea' placeholder='Enter any message if you want' onChange={inputHandler} />
-        <Button type='submit' className='w-140px mt-30'>
-          fire it away
+    <div className='w-pct-100'>
+      <form onSubmit={submitHandler} className='form d-flex column gap-12'>
+        <Input className="input" name='name' type='text' placeholder='Enter name' onChange={inputHandler} />
+        <Input className="input" name='email' type='text' placeholder='Enter e-mail' onChange={inputHandler} />
+        <Input className="input" name='mess' type='textarea' placeholder='Enter any message if you want' onChange={inputHandler} />
+        <Button type='submit' className='mt-30'>
+          Click to send
         </Button>
       </form>
     </div>

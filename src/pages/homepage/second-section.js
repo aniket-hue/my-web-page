@@ -19,7 +19,7 @@ const skillIconWidth = 100;
 const skillIconHeight = 80;
 
 export const SecondSection = (props) => {
-    return <Container withScroll={true} className='top-container mb-90'>
+    return <Container withScroll={true} className='top-container'>
         <Container className='d-flex column container-lg mh-auto'>
             <Text type='130' fontWeight={400} color='veryLightBlue' className='mb-80'>
                 my skills
