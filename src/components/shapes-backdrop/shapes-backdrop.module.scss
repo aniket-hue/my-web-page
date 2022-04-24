@@ -1,0 +1,14 @@
+.moveUpDown {
+    top: 0;
+    animation: 20s ease-in-out 0s infinite alternate none moveUpDown;
+
+    @keyframes moveUpDown {
+        0% {
+            transform: translateY(0px);
+        }
+
+        100% {
+            transform: translateY(100px);
+        }
+    }
+}

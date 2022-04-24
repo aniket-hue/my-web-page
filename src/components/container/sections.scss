@@ -1,0 +1,9 @@
+@import "../../styles/common";
+
+
+@each $item,
+$color in $colors {
+    .bg-color-#{$item} {
+        background-color: $color;
+    }
+}

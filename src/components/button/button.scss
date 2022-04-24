@@ -1,36 +1,36 @@
-@use '../../styles/common'as v;
+@import "../../styles/common" ;
 
 .button {
-    height: 2.5rem;
-    width: fit-content;
-    user-select: none;
-    padding: 0 10px;
+  height: 2.5rem;
+  width: fit-content;
+  user-select: none;
+  padding: 0 10px;
 
-    color: #fff;
-    font-size: 15px;
-    font-weight: 600;
-    font-size: 22px;
+  color: $white;
+  font-size: 15px;
+  font-weight: 600;
+  font-size: 22px;
 
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
 
-    background: linear-gradient(to left, v.getColor("darkBlue") 50%, v.getColor("lightYellow") 50%) right;
-    background-size: 200%;
-    transition: .5s ease-out;
+  background: linear-gradient(to left, $darkBlue 50%, $lightYellow 50%) right;
+  background-size: 200%;
+  transition: 0.5s ease-out;
 
-    &:active {
-        animation: forwards shake;
-        background-position: left;
+  &:active {
+    animation: forwards shake;
+    background-position: left;
+  }
+
+  @keyframes shake {
+    from {
+      transform: rotateZ(-5deg);
     }
 
-    @keyframes shake {
-        from {
-            transform: rotateZ(-5deg);
-        }
-
-        to {
-            transform: rotateZ(5deg);
-        }
+    to {
+      transform: rotateZ(5deg);
     }
+  }
 }

@@ -1,4 +1,4 @@
-@use './common'as v;
+@import "./common";
 
 html.has-scroll-smooth {
     overflow: hidden;
@@ -10,10 +10,6 @@ html.has-scroll-dragging {
     -ms-user-select: none;
     user-select: none;
 }
-
-// .has-scroll-smooth body {
-//     overflow: hidden;
-// }
 
 .has-scroll-smooth [data-scroll-container] {
     min-height: 100vh;
@@ -69,7 +65,7 @@ html.has-scroll-dragging {
     position: absolute;
     top: 0;
     right: 0;
-    background-color: v.getColor("lightGray");
+    background-color: $lightGray;
     opacity: 0.5;
     width: 7px;
     border-radius: 10px;
@@ -78,7 +74,7 @@ html.has-scroll-dragging {
     cursor: grab;
 
     &:hover {
-        background-color: v.getColor("darkGray");
+        background-color: $darkGray;
     }
 }
 
