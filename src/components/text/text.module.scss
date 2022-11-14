@@ -1,0 +1,63 @@
+@import "../../styles/common.scss";
+
+@each $name,
+$color in $colors {
+  .text__#{($name)} {
+    color: $color
+  }
+}
+
+.text {
+  // display: flex;
+  // align-items: center;
+}
+
+$fonts: ("H1_TEXT_BOLD":(120, 70, 700),
+  "H2_TEXT_BOLD":(100, 52, 700),
+  "H2_TEXT_REGULAR":(40, 52, 600),
+  "H3_SEMIBOLD":(40, 48, 600),
+  "H3_TEXT_BOLD":(32, 40, 700),
+  "H3_TEXT_REGULAR":(32, 52, 500),
+  "TITLE_TEXT_1_SEMIBOLD":(24, 32, 600),
+  "TITLE_TEXT_2_SEMIBOLD":(18, 24, 600),
+  "TITLE_TEXT_3_SEMIBOLD":(28, 36, 600),
+  "TITLE_TEXT_4_SEMIBOLD":(36, 48, 600),
+  "TITLE_TEXT_5_SEMIBOLD":(24, 28, 600),
+  "SUB_TITLE_TEXT_SEMIBOLD":(20, 28, 600),
+  "SUB_TITLE_TEXT_MEDIUM":(18, 24, 500),
+  "BODY_TEXT_1_MEDIUM":(16, 20, 500),
+  "BODY_TEXT_SEMIBOLD":(14, 20, 600),
+  "LINK_TEXT_1_SEMIBOLD":(16, 20, 600),
+  "DESCRIPTION_TEXT_MEDIUM":(14, 20, 500),
+  "DESCRIPTION_TEXT_REGULAR":(18, 24, 400),
+  "DESCRIPTION_TEXT_BOLD":(14, 20, 700),
+  "LABEL_TEXT_MEDIUM":(12, 16, 500),
+  "LABEL_TEXT_2_BOLD":(12, 16, 700),
+  "CAPTION_TEXT_REGULAR_SMALL":(12, 16, 400),
+  "CAPTION_TEXT_REGULAR_LARGE":(14, 20, 400),
+  "BASE_TEXT_REGULAR":(16, 20, 400),
+  "BASE_TEXT_2_BOLD":(16, 20, 700),
+  "BASE_TEXT_MEDIUM":(20, 28, 500),
+  "BASE_TEXT_BOLD":(20, 28, 700),
+);
+
+
+@each $fontName,
+$font in $fonts {
+  .text__#{$fontName} {
+    font-size: #{nth($font, 1)}px;
+    line-height: #{nth($font, 2)}px;
+    font-weight: nth($font, -1);
+  }
+}
+
+@each $fontName,
+$font in $fonts {
+  .text__mobile_#{$fontName} {
+    @include respond("mobile") {
+      font-size: #{nth($font, 1)}px;
+      line-height: #{nth($font, 2)}px;
+      font-weight: nth($font, -1);
+    }
+  }
+}

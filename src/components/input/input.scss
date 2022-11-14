@@ -1,9 +1,35 @@
-@use '../../styles/common'as v;
+@import '../../styles/common';
 
 .input {
     padding: 10px;
-    border-radius: 7px;
-    border: 2px solid v.getColor("veryLightBlue");
     outline: none;
     font-size: 20px;
+}
+
+.error-box {
+    overflow: hidden;
+    position: relative;
+
+    .error-text {
+        color: $lightRed;
+        z-index: 1;
+    }
+
+    .cover {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        background-color: white;
+        animation: increaseHeight 1.2s infinite ease;
+    }
+
+    @keyframes increaseHeight {
+        from {
+            height: 0px;
+        }
+
+        to {
+            height: 1.5rem;
+        }
+    }
 }

@@ -1,0 +1,20 @@
+{
+    "black": "#333333",
+    "white":"#ffffff",
+    "white2":"#e2e8f0",
+    "salmon":"#fa8072",
+    "veryLightBlue": "#add8e6",
+    "lightBlue": "#4D96FF",
+    "darkBlue": "#446df6",
+    "lightGreen": "#aceca1",
+    "darkGreen": "#6BCB77",
+    "lightGray": "#efefef",
+    "darkGray": "#c2c2c2",
+    "veryDarkGray":"#999999",
+    "lightViolet": "#ac87fe",
+    "darkYellow": "#FFD93D",
+    "lightYellow": "#fbf34c",
+    "lightRed": "#FF6B6B",
+    "razorBlue":"#4a5568",
+    "darkRazorBlue":"#2d3748"
+}

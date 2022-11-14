@@ -3,13 +3,14 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@types/react": "^17.0.43",
+    "@types/react": "^18.0.25",
+    "emailjs-com": "^3.2.0",
     "locomotive-scroll": "^4.1.4",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-router": "^6.2.2",
     "react-router-dom": "^6.3.0",
-    "react-scripts": "5.0.0",
+    "react-scripts": "^5.0.1",
     "sass": "^1.49.9"
   },
   "scripts": {
@@ -17,6 +18,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
+    "colors": "node ./src/sync-colors.js",
     "format": "prettier --write \"**/*.+(js|jsx|json|css|md)\""
   },
   "browserslist": {
@@ -32,6 +34,11 @@
     ]
   },
   "devDependencies": {
-    "prettier": "2.6.1"
+    "@types/jest": "^29.2.2",
+    "@types/locomotive-scroll": "^4.1.0",
+    "@types/node": "^18.11.9",
+    "@types/react-dom": "^18.0.8",
+    "prettier": "2.6.1",
+    "typescript": "^4.8.4"
   }
 }

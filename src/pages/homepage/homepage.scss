@@ -1,4 +1,4 @@
-@use "../styles/common"as v;
+@import "../../styles/common";
 
 .top-container {
     position: relative;
@@ -42,11 +42,11 @@
 
     .href-link {
         &:active {
-            color: v.getColor("lightRed")
+            color: $lightRed
         }
 
         &:visited {
-            color: v.getColor("lightRed")
+            color: $lightRed
         }
     }
 
@@ -61,18 +61,18 @@
             cursor: pointer;
 
             a {
-                color: v.getColor("darkGray");
+                color: $darkGray;
             }
 
             &:hover {
                 transform: scale(1.1);
-                color: v.getColor("white2");
+                color: $white2;
             }
         }
 
         svg {
             user-select: none;
-            fill: v.getColor("darkGray");
+            fill: $darkGray;
             width: 50px;
             height: 50px;
             transition: .2s;
@@ -80,7 +80,7 @@
 
         svg:hover {
             transform: scale(1.1);
-            fill: v.getColor("white2");
+            fill: $white2;
         }
     }
 }
