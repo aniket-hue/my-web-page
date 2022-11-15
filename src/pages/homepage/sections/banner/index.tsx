@@ -16,7 +16,7 @@ import { SectionHeading } from "../../../../components/section-heading";
 export const Banner: React.FC<any> = () => {
   return (
     <Section shapes={BannerShapes}>
-      <Container alignItems='center'>
+      <Container>
         <SectionHeading>Heyo!</SectionHeading>
 
         <Text font={FontType.H2_TEXT_BOLD} mobileFont={FontType.H3_TEXT_REGULAR} className={styles["waving-hand"]}>

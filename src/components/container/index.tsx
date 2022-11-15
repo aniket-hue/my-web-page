@@ -5,18 +5,18 @@ import { ColorVariants } from "../../colors";
 import { cx } from "../../utils/helpers";
 import "./sections.scss";
 
+type SpacingType = number | "auto" | "unset";
+
 export type Spacing =
   | {
-      top?: number | "auto" | "unset";
-      bottom?: number | "auto" | "unset";
-      left?: number | "auto" | "unset";
-      right?: number | "auto" | "unset";
-      x?: number | "auto" | "unset";
-      y?: number | "auto" | "unset";
+      top?: SpacingType;
+      bottom?: SpacingType;
+      left?: SpacingType;
+      right?: SpacingType;
+      x?: SpacingType;
+      y?: SpacingType;
     }
-  | number
-  | "auto"
-  | "unset";
+  | SpacingType;
 
 enum StyleNames {
   flex = "flex",
@@ -117,12 +117,14 @@ export const Container: React.FC<ContainerProps> = forwardRef(({ withScroll = fa
       height,
       position,
       backgroundColor,
+      justifyContent,
+      alignItems,
       flexDirection,
     } = styleKeys.reduce((p: any, c: any) => {
       p[c] = getStyle(c);
 
       return p;
-    }, {});
+    }, {}) as Styles;
 
     let paddingFinal: any = padding;
     let marginFinal: any = margin;
@@ -141,6 +143,8 @@ export const Container: React.FC<ContainerProps> = forwardRef(({ withScroll = fa
         typeof width === "string" ? `width-pct-${+width / 10}` : width ? `width-px-${+width / 10}` : undefined,
         typeof height === "string" ? `height-pct-${+height / 10}` : height ? `height-px-${+height / 10}` : undefined,
         flexDirection ? flexDirection : undefined,
+        justifyContent ? `justify-${justifyContent}` : undefined,
+        alignItems ? `justify-${alignItems}` : undefined,
         flexWrap,
         props.className
       ),
