@@ -1,126 +1,156 @@
-import React, { PropsWithChildren, CSSProperties, forwardRef, useRef } from "react";
+import React, { PropsWithChildren, CSSProperties, forwardRef, useRef, useContext } from "react";
 import { useMemo } from "react";
+import { ResizeContext } from "../../App";
 import { ColorVariants } from "../../colors";
 import { cx } from "../../utils/helpers";
 import "./sections.scss";
 
 export type Spacing =
   | {
-      top?: number | "auto";
-      bottom?: number | "auto";
-      left?: number | "auto";
-      right?: number | "auto";
-      x?: number | "auto";
-      y?: number | "auto";
+      top?: number | "auto" | "unset";
+      bottom?: number | "auto" | "unset";
+      left?: number | "auto" | "unset";
+      right?: number | "auto" | "unset";
+      x?: number | "auto" | "unset";
+      y?: number | "auto" | "unset";
     }
   | number
-  | "auto";
+  | "auto"
+  | "unset";
+
+enum StyleNames {
+  flex = "flex",
+  position = "position",
+  justifyContent = "justifyContent",
+  alignItems = "alignItems",
+  flexDirection = "flexDirection",
+  flexWrap = "flexWrap",
+  backgroundColor = "backgroundColor",
+  padding = "padding",
+  margin = "margin",
+  width = "width",
+  height = "height",
+  gap = "gap",
+  zIndex = "zIndex",
+}
+
+type Styles = {
+  flex?: boolean;
+  backgroundColor?: ColorVariants;
+  padding?: Spacing;
+  margin?: Spacing;
+  position?: CSSProperties["position"];
+  justifyContent?: CSSProperties["justifyContent"];
+  alignItems?: CSSProperties["alignItems"];
+  flexDirection?: CSSProperties["flexDirection"];
+  flexWrap?: CSSProperties["flexWrap"];
+  width?: CSSProperties["width"];
+  height?: CSSProperties["height"];
+  gap?: CSSProperties["gap"];
+  zIndex?: CSSProperties["zIndex"];
+};
 
 export type ContainerProps = React.HTMLAttributes<HTMLDivElement> &
-  PropsWithChildren<{
-    className?: string;
-    flex?: boolean;
-    withScroll?: boolean;
-    position?: CSSProperties["position"];
-    justifyContent?: CSSProperties["justifyContent"];
-    alignItems?: CSSProperties["alignItems"];
-    flexDirection?: CSSProperties["flexDirection"];
-    flexWrap?: CSSProperties["flexWrap"];
-    backgroundColor?: ColorVariants;
-    padding?: Spacing;
-    margin?: Spacing;
-    width?: number | string;
-    height?: number | string;
-    gap?: number;
-    zIndex?: number;
-    ref?: React.Ref<HTMLDivElement>;
-  }>;
+  PropsWithChildren<
+    Styles & {
+      className?: string;
+      withScroll?: boolean;
+      ref?: React.Ref<HTMLDivElement>;
+      sm?: Styles;
+    }
+  >;
+
+const getSpacingClasses = (spacing: Spacing, type: "p" | "m") => {
+  if (typeof spacing === "string" || typeof spacing === "number") {
+    return [`${type}-${spacing}`];
+  } else if (typeof spacing === "object") {
+    let spaces = {
+      left: spacing.x || spacing.left || 0,
+      right: spacing.x || spacing.right || 0,
+      top: spacing.y || spacing.top || 0,
+      bottom: spacing.y || spacing.bottom || 0,
+    };
+
+    return Object.entries(spaces)
+      .map(([k, v]) => {
+        if (!v) {
+          return undefined;
+        }
+
+        return `${type}-${k}-${v}`;
+      })
+      .filter(Boolean);
+  } else {
+    return [];
+  }
+};
 
 export const Container: React.FC<ContainerProps> = forwardRef(({ withScroll = false, onClick, ...props }, ref) => {
+  const { windowSize } = useContext(ResizeContext);
   const { style, className } = useMemo(() => {
+    const style = windowSize >= 767 ? "l" : "sm";
+
+    const getStyle = (k: keyof Styles) => {
+      const { sm = {}, ...l } = props;
+
+      if (style === "sm") {
+        if (sm[k]) {
+          return sm[k];
+        } else {
+          return l[k];
+        }
+      } else {
+        return l[k];
+      }
+    };
+
+    const styleKeys = Object.keys(StyleNames);
+
     const {
+      flex = true,
+      width = "100",
+      flexWrap = "unset",
+      zIndex = 1,
       padding,
       margin,
       gap,
-      flex = true,
-      width = "100%",
       height,
       position,
       backgroundColor,
       flexDirection,
-      className,
-      flexWrap = "unset",
-      zIndex = 1,
-    } = props;
+    } = styleKeys.reduce((p: any, c: any) => {
+      p[c] = getStyle(c);
 
-    let paddingFinal: any = props.padding;
-    let marginFinal: any = props.margin;
+      return p;
+    }, {});
 
-    if (typeof padding === "number") {
-      paddingFinal = {
-        padding: (props.padding as any) * 4,
-      };
-    } else if (typeof padding !== "string") {
-      const { padding = {} } = props as any;
+    let paddingFinal: any = padding;
+    let marginFinal: any = margin;
 
-      paddingFinal = {
-        paddingLeft: padding.x || padding.left || 0,
-        paddingRight: padding.x || padding.right || 0,
-        paddingTop: padding.y || padding.top || 0,
-        paddingBottom: padding.y || padding.bottom || 0,
-      };
-
-      paddingFinal = Object.entries(paddingFinal).reduce((p, [k, v]) => {
-        p[k] = (v as number) * 4;
-
-        return p;
-      }, {} as any);
-    } else {
-      paddingFinal = { padding };
-    }
-
-    if (typeof margin === "number") {
-      marginFinal = {
-        margin: (props.margin as any) * 4,
-      };
-    } else if (typeof margin !== "string") {
-      const { margin = {} } = props as any;
-      marginFinal = {
-        marginLeft: margin.x || margin.left || 0,
-        marginRight: margin.x || margin.right || 0,
-        marginTop: margin.y || margin.top || 0,
-        marginBottom: margin.y || margin.bottom || 0,
-      };
-
-      marginFinal = Object.entries(marginFinal).reduce((p, [k, v]) => {
-        p[k] = (v as number) * 4;
-
-        return p;
-      }, {} as any);
-    } else {
-      marginFinal = { margin };
-    }
+    const paddingClasses = getSpacingClasses(paddingFinal, "p");
+    const marginClasses = getSpacingClasses(marginFinal, "m");
 
     return {
       className: cx(
-        className,
-        flex ? "d-flex" : "d-block",
-        `gap-${(gap || 0) * 4}`,
-        typeof width === "string" ? width : `w-${width}px`,
-        typeof height === "string" ? height : `w-${height}px`,
-        `p-${position}`,
-        `bg-color-${backgroundColor}`,
-        flexDirection
+        ...marginClasses,
+        ...paddingClasses,
+        flex ? "flex" : "block",
+        gap ? `gap-${gap}` : undefined,
+        position ? `${position}` : undefined,
+        backgroundColor ? `bg-color-${backgroundColor}` : undefined,
+        typeof width === "string" ? `width-pct-${+width / 10}` : width ? `width-px-${+width / 10}` : undefined,
+        typeof height === "string" ? `height-pct-${+height / 10}` : height ? `height-px-${+height / 10}` : undefined,
+        flexDirection ? flexDirection : undefined,
+        flexWrap,
+        props.className
       ),
 
       style: {
-        ...paddingFinal,
-        ...marginFinal,
-        flexWrap,
         zIndex,
+        ...props.style,
       },
     };
-  }, [props]);
+  }, [props, windowSize]);
 
   const commonProps = useMemo(
     () => ({

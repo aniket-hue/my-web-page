@@ -1,37 +1,42 @@
 @import "../../../../styles/common.scss";
 
 .social-links {
-    p {
-        text-decoration: underline;
-        text-underline-offset: 5px;
-        text-transform: capitalize;
-        margin: auto 0;
-        transition: .2s;
-        cursor: pointer;
+  p {
+    text-decoration: underline;
+    text-underline-offset: 5px;
+    text-transform: capitalize;
+    margin: auto 0;
+    transition: 0.2s;
+    cursor: pointer;
 
-        a {
-            color: $darkGray;
-        }
-
-        &:hover {
-            transform: scale(1.1);
-            color: $white2;
-        }
+    a {
+      color: $bodyPrimary;
     }
 
-    svg {
-        cursor: pointer;
-        user-select: none;
-        fill: $darkGray;
-        width: 50px;
-        height: 50px;
-        transition: .2s;
+    &:hover {
+      transform: scale(1.1);
+      color: $white2;
     }
+  }
 
-    svg:hover {
-        transform: scale(1.1);
-        fill: $white2;
+  svg {
+    cursor: pointer;
+    user-select: none;
+    fill: $bodyPrimary;
+    width: 50px;
+    height: 50px;
+    transition: 0.2s;
+
+    @include respond("mobile") {
+      width: 35px;
+      height: 35px;
     }
+  }
+
+  svg:hover {
+    transform: scale(1.1);
+    fill: $white2;
+  }
 }
 
 // .top-container {
@@ -40,37 +45,6 @@
 //     .about-wrapper {
 //         p {
 //             text-align: justify;
-//         }
-//     }
-
-//     .waving-hand {
-//         cursor: pointer;
-
-//         &:hover {
-//             animation: waving 1.2s forwards;
-//         }
-
-//         @keyframes waving {
-//             0% {
-//                 transform: scale(1) rotateZ(0deg);
-//             }
-
-//             25% {
-//                 transform: scale(1.2) rotateZ(-20deg);
-//             }
-
-//             50% {
-//                 transform: scale(1.2) rotateZ(20deg);
-//             }
-
-//             75% {
-//                 transform: scale(1.2) rotateZ(-20deg);
-//             }
-
-//             100% {
-//                 transform: scale(1) rotateZ(0deg);
-//             }
-
 //         }
 //     }
 
@@ -84,5 +58,36 @@
 //         }
 //     }
 
-
 // }
+
+.waving-hand {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+
+  &:hover {
+    animation: waving 1.2s forwards;
+  }
+
+  @keyframes waving {
+    0% {
+      transform: scale(1) rotateZ(0deg);
+    }
+
+    25% {
+      transform: scale(1.2) rotateZ(-20deg);
+    }
+
+    50% {
+      transform: scale(1.2) rotateZ(20deg);
+    }
+
+    75% {
+      transform: scale(1.2) rotateZ(-20deg);
+    }
+
+    100% {
+      transform: scale(1) rotateZ(0deg);
+    }
+  }
+}
