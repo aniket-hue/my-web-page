@@ -39,31 +39,12 @@
   }
 }
 
-// .top-container {
-//     position: relative;
-
-//     .about-wrapper {
-//         p {
-//             text-align: justify;
-//         }
-//     }
-
-//     .href-link {
-//         &:active {
-//             color: $lightRed
-//         }
-
-//         &:visited {
-//             color: $lightRed
-//         }
-//     }
-
-// }
-
 .waving-hand {
   cursor: pointer;
   display: flex;
   align-items: center;
+
+  transform-origin: bottom right;
 
   &:hover {
     animation: waving 1.2s forwards;
@@ -75,15 +56,15 @@
     }
 
     25% {
-      transform: scale(1.2) rotateZ(-20deg);
+      transform: scale(1.05) rotateZ(40deg);
     }
 
     50% {
-      transform: scale(1.2) rotateZ(20deg);
+      transform: scale(1.05) rotateZ(-20deg);
     }
 
     75% {
-      transform: scale(1.2) rotateZ(-20deg);
+      transform: scale(1.05) rotateZ(40deg);
     }
 
     100% {
