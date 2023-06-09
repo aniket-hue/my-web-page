@@ -9,7 +9,7 @@ import { ColorVariants } from "../../../../colors";
 
 import styles from "./banner.module.scss";
 import { BannerShapes } from "./constants";
-import { LINKS } from "../../../../utils/constants";
+import { COLOR, LINKS } from "../../../../utils/constants";
 import { Section } from "../../../../components/section";
 import { SectionHeading } from "../../../../components/section-heading";
 
@@ -31,12 +31,9 @@ export const Banner: React.FC<any> = () => {
           weight={500}
           color={ColorVariants.BODYPRIMARY}
         >
-          My name is Aniket. I am a frontend engineer (
-          <a className='href-link' href='https://www.primathon.in' target='_blank'>
-            @Primathon
-          </a>
-          ) focused on improving myself. Always looking to learn new skills and improve on existing knowledge, hoping to
-          contribute to making the world a better place.
+          My name is <span style={{ color: COLOR.lightRed }}>Aniket</span>. I am a frontend engineer focused on
+          improving myself. Always looking to learn new skills and improve on existing knowledge, hoping to contribute
+          to making the world a better place.
         </Text>
       </Container>
 

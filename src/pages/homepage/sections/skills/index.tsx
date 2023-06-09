@@ -46,7 +46,7 @@ export const Skills: React.FC<any> = () => {
     <Section shapes={SkillShapes}>
       <SectionHeading>skills</SectionHeading>
 
-      <Container flexWrap='wrap' margin={{ top: 25 }} gap={8} sm={{ margin: { top: 10 } }}>
+      <Container flexWrap='wrap' margin={{ top: 25 }} gap={16} sm={{ margin: { top: 10 } }}>
         {skillIcons.map((e) => (
           <SkillIcon icon={e} />
         ))}

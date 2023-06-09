@@ -5,7 +5,7 @@ import { FontType, Text } from "../text";
 export const SectionHeading: React.FC<PropsWithChildren> = ({ children }) => {
   return (
     <Text
-      font={FontType.H1_TEXT_BOLD}
+      font={FontType.H2_TEXT_BOLD}
       mobileFont={FontType.H2_TEXT_REGULAR}
       weight={500}
       color={ColorVariants.TEXTHEADINGPRIMARY}

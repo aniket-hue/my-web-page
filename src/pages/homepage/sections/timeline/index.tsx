@@ -11,7 +11,12 @@ import data from "./data.json";
 
 export const Timeline = () => {
   return (
-    <Section shapes={TimelineShapes}>
+    <Section
+      shapes={TimelineShapes}
+      containerProps={{
+        className: "height-pct-100",
+      }}
+    >
       <Container>
         <SectionHeading>timeline</SectionHeading>
       </Container>
