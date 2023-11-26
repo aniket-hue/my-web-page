@@ -5,18 +5,21 @@ import { FontType, Text } from "../text";
 
 export const Footer = () => {
   return (
-    <Container margin={{ top: 10, x: "auto" }} justifyContent='center'>
+    <Container flexDirection='column' alignItems='center' margin={{ top: 10 }}>
       <Text
-        style={{ display: "inline-block" }}
+        style={{ display: "inline-block", textAlign: "center" }}
         font={FontType.SUB_TITLE_TEXT_SEMIBOLD}
         color={ColorVariants.TEXTHEADINGPRIMARY}
       >
         Made with ❤️ in India
-        <br />
       </Text>
-      <a href='https://github.com/aniket-hue/portfolio' target='_blank' style={{ textDecoration: "none" }}>
-        <Text type='span' color={ColorVariants.LIGHTRED}>
-          &nbsp;{" <Code />"}
+      <a
+        href='https://github.com/aniket-hue/portfolio'
+        target='_blank'
+        style={{ textDecoration: "none", textAlign: "center" }}
+      >
+        <Text type='span' font={FontType.BASE_TEXT_REGULAR} color={ColorVariants.LIGHTRED}>
+          {"<Code />"}
         </Text>
       </a>
     </Container>

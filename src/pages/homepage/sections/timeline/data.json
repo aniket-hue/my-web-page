@@ -1,5 +1,12 @@
 {
   "timeline": {
+    "2023": [
+      "👨🏼‍💻 - Joined @BluSmart/UiX Labs",
+      "💻 - Created 2 NPM packages for web apps, housing design system components and common UIs.",
+      "💻 - Revamped BluCharge with React Native for seamless vehicle charging.",
+      "💻 - Developed \"Bolt,\" a Fleet Management System tailored for the B2B market and BluSmart.",
+      "💻 - Created BluMarshal in React Native for tracking vehicle movement at charging hubs."
+    ],
     "2022": [
       "🙋 - Lead a team of 3 people in the PWA execution for the Delhi government",
       "💻 - Created an CAD-type software API, oriented to drawing and modelling in 2D.",

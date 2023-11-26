@@ -3,7 +3,6 @@ import { FontType, Text } from "../../../../components/text";
 import React from "react";
 
 import { ReactComponent as GithubIcon } from "../../../../assets/github.svg";
-import { ReactComponent as InstagramIcon } from "../../../../assets/instagram.svg";
 import { ReactComponent as LinkedinIcon } from "../../../../assets/linkedin.svg";
 import { ColorVariants } from "../../../../colors";
 
@@ -28,7 +27,6 @@ export const Banner: React.FC<any> = () => {
         <Text
           font={FontType.H3_TEXT_REGULAR}
           mobileFont={FontType.SUB_TITLE_TEXT_SEMIBOLD}
-          weight={500}
           color={ColorVariants.BODYPRIMARY}
         >
           My name is <span style={{ color: COLOR.lightRed }}>Aniket</span>. I am a frontend engineer focused on
@@ -39,15 +37,11 @@ export const Banner: React.FC<any> = () => {
 
       <Container className={styles["social-links"]} gap={10} margin={{ top: 22 }} sm={{ margin: { top: 12 } }}>
         <a href={LINKS.GITHUB} target='_blank'>
-          <GithubIcon width={60} height={60} />
+          <GithubIcon width={20} height={20} />
         </a>
 
         <a href={LINKS.LINKED_IN} target='_blank'>
-          <LinkedinIcon width={60} height={60} />
-        </a>
-
-        <a href={LINKS.INSTAGRAM} target='_blank'>
-          <InstagramIcon width={60} height={60} />
+          <LinkedinIcon width={20} height={20} />
         </a>
 
         <Text

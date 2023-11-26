@@ -3,7 +3,6 @@ import { ColorVariants } from "../../../../colors";
 import { Container } from "../../../../components/container";
 import { Section } from "../../../../components/section";
 import { SectionHeading } from "../../../../components/section-heading";
-import { ShapesBackdrop } from "../../../../components/shapes-backdrop";
 import { FontType, Text } from "../../../../components/text";
 import { TimelineShapes } from "./constants";
 
@@ -34,9 +33,9 @@ export const Timeline = () => {
                 {v.map((e, i) => (
                   <Text
                     key={i}
-                    font={FontType.TITLE_TEXT_1_SEMIBOLD}
+                    font={FontType.TITLE_TEXT_2_SEMIBOLD}
                     mobileFont={FontType.DESCRIPTION_TEXT_REGULAR}
-                    weight={500}
+                    weight={400}
                     color={ColorVariants.BODYPRIMARY}
                   >
                     {e}
